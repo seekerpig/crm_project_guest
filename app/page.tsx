@@ -10,13 +10,13 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { TabletApplication as TabletApplicationType } from "@/app/data/dataTypes";
 import TabletApplication from "@/components/TabletApplication";
-import { set } from "lodash";
 
 const Home = () => {
   const [nric, setNric] = useState("");
   const [dialogOpen, setDialogOpen] = useState(false);
   const [tabApplications, setTabletApplications] = useState([] as TabletApplicationType[]);
   const [error, setError] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
   const searchTablet = async () => {
     setTabletApplications([]);
@@ -46,13 +46,22 @@ const Home = () => {
               <p className="text-sm text-muted-foreground">Enter your NRIC to search for tablet</p>
             </div>
             <Input
-              type="text"
+              type={showPassword ? "text" : "password"}
               value={nric}
               placeholder="Identified Code/ NRIC"
               onChange={(e) => {
                 setNric(e.target.value as string);
               }}
             />
+            <div className="flex">
+              <label className="text-xs mr-2">Show NRIC</label>
+              <input
+                type="checkbox"
+                onChange={() => {
+                  setShowPassword(!showPassword);
+                }}
+              />
+            </div>
 
             <Dialog open={dialogOpen && tabApplications.length > 0} onOpenChange={setDialogOpen}>
               <DialogTrigger asChild>
@@ -67,7 +76,6 @@ const Home = () => {
                     <Table>
                       <TableHeader>
                         <TableRow>
-                          <TableHead>Applicant IC</TableHead>
                           <TableHead>Tablet Number</TableHead>
                           <TableHead>Beneficiary 1 English Name</TableHead>
                           <TableHead>Beneficiary 1 Chinese Name</TableHead>
@@ -80,7 +88,6 @@ const Home = () => {
                       <TableBody>
                         {tabApplications.map((tabApplications) => (
                           <TableRow key={tabApplications.ApplicationID.toString()}>
-                            <TableCell>{tabApplications.Applicant_IdentifiedCode}</TableCell>
                             <TableCell>{tabApplications.Tablet_Number}</TableCell>
                             <TableCell>{tabApplications.Beneficiary1_Name_English}</TableCell>
                             <TableCell>{tabApplications.Beneficiary1_Name_Chinese}</TableCell>
