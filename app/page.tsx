@@ -42,6 +42,10 @@ const Home = () => {
       <div className="container h-full">
         <div className="lg:p-8 lg:m-20 h-full ">
           <div className="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px]">
+            <div className="flex flex-col justify-center items-center w-full">
+              <img src="/temple-icon.jpeg" alt="temple-icon" className="mt-2 w-[200px] h-[250px]" />
+              <h2 className="mt-2 mb-2 px-4 text-xl font-semibold tracking-tight">真空教本元山道堂</h2>
+            </div>
             <div className="flex flex-col space-y-2 text-center">
               <p className="text-sm text-muted-foreground">Enter your NRIC to search for tablet</p>
             </div>
