@@ -13,5 +13,5 @@ jobs:
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_TEMPLE_DE382 }}'
-          projectId: temple-de382
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_TEMPLEAPP_8078F }}'
+          projectId: templeapp-8078f
