@@ -1,15 +1,12 @@
 "use client";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
-import { collection, query, where, getDocs, doc, getDoc, writeBatch, addDoc, setDoc, updateDoc } from "firebase/firestore";
+import { collection, query, where, getDocs } from "firebase/firestore";
 import { db } from "@/lib/firebase/firebase";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Table, TableBody, TableCaption, TableCell, TableFooter, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { TabletApplication as TabletApplicationType } from "@/app/data/dataTypes";
-import TabletApplication from "@/components/TabletApplication";
 
 const Home = () => {
   const [nric, setNric] = useState("");
