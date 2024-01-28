@@ -11,7 +11,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Temple Tablets CRM",
+  title: "Temple Tablets CRM Guest Page",
   description: "Custom CRM For Temple Tablets, Built with Next.js and Firebase",
 };
 
