@@ -26,5 +26,3 @@ jobs:
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_TEMPLEAPP_8078F }}'
           channelId: live
           projectId: templeapp-8078f
-        env:
-          FIREBASE_CLI_EXPERIMENTS: webframeworks
