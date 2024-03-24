@@ -44,7 +44,7 @@ const Home = () => {
               <h2 className="mt-2 mb-2 px-4 text-xl font-semibold tracking-tight">真空教本元山道堂</h2>
             </div>
             <div className="flex flex-col space-y-2 text-center">
-              <p className="text-sm text-muted-foreground">Enter your NRIC to search for tablet</p>
+              <p className="text-sm text-muted-foreground">Enter the last four digit of your NRIC to search for tablet</p>
             </div>
             <Input
               type={showPassword ? "text" : "password"}
